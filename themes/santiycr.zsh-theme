@@ -1,9 +1,11 @@
 if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ] || [ -n "$SSH_CONNECTION" ]; then
   SEP="☁ "
+  HOS="(%m) "
 else
   SEP="•"
+  HOS=""
 fi
-PROMPT='%{$fg_no_bold[cyan]%}%n %{$fg_no_bold[yellow]%}%3~%{$reset_color%} %{$fg_no_bold[magenta]%}$SEP %{$reset_color%}'
+PROMPT='%{$fg_no_bold[cyan]%}%n %{$fg_no_bold[yellow]%}%3~%{$reset_color%} $HOS%{$fg_no_bold[magenta]%}$SEP %{$reset_color%}'
 RPROMPT='$(vi_mode_prompt_info) $(git_prompt_info) %{$reset_color%}[%*]'
 
 # git theming
